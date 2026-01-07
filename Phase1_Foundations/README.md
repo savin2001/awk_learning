@@ -1,6 +1,6 @@
 # Phase 1: The Tactical Diagnostician (Foundations)
 
-As a **Solution Architect**, you often find yourself in environments—such as a secure jump box, a minimal Docker container, or a legacy server—where high-level languages like Python or Node.js are either unavailable or overkill. **Phase 1** focuses on the "tactical" use of AWK: the ability to perform zero-dependency data surgery to diagnose architectural issues on the fly.
+As a **Solution Architect**, you often find yourself in environments such as a secure jump box, a minimal Docker container, or a legacy server where high-level languages like Python or Node.js are either unavailable or overkill. **Phase 1** focuses on the "tactical" use of AWK: the ability to perform zero-dependency data surgery to diagnose architectural issues on the fly.
 
 ---
 
@@ -39,7 +39,7 @@ As a **Solution Architect**, you often find yourself in environments—such as a
 *   **Implementation Note:** Use `split($6, array, ":")` to break the JSON-like field without needing a heavy parser like `jq`.
 
 #### 4. Resource Over-utilization Finder
-*   **Scenario:** A server is lagging. You need to identify which processes are the "Architectural Villains"—consuming more resources than the microservice's allocated quota.
+*   **Scenario:** A server is lagging. You need to identify which processes are the "Architectural Villains" consuming more resources than the microservice's allocated quota.
 *   **The Task:** Parse the output of `ps aux`, skip the header line, and print the PID and Process Name only for those using more than 80% CPU.
 *   **Skill Gained:** Using `NR` (Number of Records) to skip headers and performing numeric comparisons on fields.
 *   **Why for SAs:** Real-time performance troubleshooting and capacity validation during load testing.
